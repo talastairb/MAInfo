@@ -35,6 +35,7 @@
 		D357AB1418FC4E730071077B /* saa.png in Resources */ = {isa = PBXBuildFile; fileRef = D357AB0718FC4E730071077B /* saa.png */; };
 		D357AB1518FC4E730071077B /* saaiconnew.png in Resources */ = {isa = PBXBuildFile; fileRef = D357AB0818FC4E730071077B /* saaiconnew.png */; };
 		D357AB1618FC4E730071077B /* saaiconnewselected.png in Resources */ = {isa = PBXBuildFile; fileRef = D357AB0918FC4E730071077B /* saaiconnewselected.png */; };
+		D3B4C22018FE090E00DD5B4A /* Notes.txt in Resources */ = {isa = PBXBuildFile; fileRef = D3B4C21F18FE090E00DD5B4A /* Notes.txt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,6 +83,7 @@
 		D357AB0718FC4E730071077B /* saa.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = saa.png; sourceTree = "<group>"; };
 		D357AB0818FC4E730071077B /* saaiconnew.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = saaiconnew.png; sourceTree = "<group>"; };
 		D357AB0918FC4E730071077B /* saaiconnewselected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = saaiconnewselected.png; sourceTree = "<group>"; };
+		D3B4C21F18FE090E00DD5B4A /* Notes.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Notes.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,6 +152,7 @@
 				D336F02018FC4BAF00C1A0A3 /* Supporting Files */,
 				43537F4C18FDEB1B00D4F69E /* SecondViewController.h */,
 				43537F4D18FDEB1B00D4F69E /* SecondViewController.m */,
+				D3B4C21F18FE090E00DD5B4A /* Notes.txt */,
 			);
 			path = MAInfoMaster;
 			sourceTree = "<group>";
@@ -274,6 +277,7 @@
 			files = (
 				D336F03218FC4BB000C1A0A3 /* Images.xcassets in Resources */,
 				D357AB0D18FC4E730071077B /* gear.png in Resources */,
+				D3B4C22018FE090E00DD5B4A /* Notes.txt in Resources */,
 				D357AB1318FC4E730071077B /* ic_launcher.png in Resources */,
 				D357AB0A18FC4E730071077B /* flik.png in Resources */,
 				D357AB1018FC4E730071077B /* ic_action_expand.png in Resources */,
