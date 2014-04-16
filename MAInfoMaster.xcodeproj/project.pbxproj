@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		43537F4E18FDEB1B00D4F69E /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43537F4D18FDEB1B00D4F69E /* SecondViewController.m */; };
 		D336F01A18FC4BAF00C1A0A3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D336F01918FC4BAF00C1A0A3 /* Foundation.framework */; };
 		D336F01C18FC4BAF00C1A0A3 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D336F01B18FC4BAF00C1A0A3 /* CoreGraphics.framework */; };
 		D336F01E18FC4BAF00C1A0A3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D336F01D18FC4BAF00C1A0A3 /* UIKit.framework */; };
@@ -47,6 +48,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		43537F4C18FDEB1B00D4F69E /* SecondViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
+		43537F4D18FDEB1B00D4F69E /* SecondViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
 		D336F01618FC4BAF00C1A0A3 /* MAInfoMaster.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MAInfoMaster.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D336F01918FC4BAF00C1A0A3 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		D336F01B18FC4BAF00C1A0A3 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -145,6 +148,8 @@
 				D336F02F18FC4BAF00C1A0A3 /* ViewController.m */,
 				D336F03118FC4BB000C1A0A3 /* Images.xcassets */,
 				D336F02018FC4BAF00C1A0A3 /* Supporting Files */,
+				43537F4C18FDEB1B00D4F69E /* SecondViewController.h */,
+				43537F4D18FDEB1B00D4F69E /* SecondViewController.m */,
 			);
 			path = MAInfoMaster;
 			sourceTree = "<group>";
@@ -301,6 +306,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				43537F4E18FDEB1B00D4F69E /* SecondViewController.m in Sources */,
 				D336F03018FC4BAF00C1A0A3 /* ViewController.m in Sources */,
 				D336F02A18FC4BAF00C1A0A3 /* AppDelegate.m in Sources */,
 				D336F02618FC4BAF00C1A0A3 /* main.m in Sources */,
