@@ -104,11 +104,12 @@
     
     NSURLRequest *urlRequest = [NSURLRequest requestWithURL:url
                                                 cachePolicy:NSURLRequestReturnCacheDataElseLoad
-                                            timeoutInterval:30];
+                                            timeoutInterval:60];
     
     NSData *urlData;
     NSURLResponse *response;
     NSError *error;
+    
     
     urlData = [NSURLConnection sendSynchronousRequest:urlRequest
                                     returningResponse:&response
@@ -123,6 +124,8 @@
     //NSLog(@"Number of activities: %i", [activityDic count]);
     //NSLog(@"Description: %@", [activityDic description]);
     //NSLog(@"%@", activityDic);
+    NSLog(@"%@", urlData);
+    NSLog(@"%@", jsonDic);
     
     for(NSDictionary *activities in activityDic){
         NSString *eventNameString = [NSString stringWithFormat:@"%@", [activities objectForKey:@"eventName"]];
