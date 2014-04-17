@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>71C08EC5-5B3C-4402-A507-7DFA2B929206</string>
+	<key>IDESourceControlProjectName</key>
+	<string>MAInfo</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>BE569F5A-BC3A-4630-A611-81997A39176C</key>
+		<string>https://github.com/talastairb/MAInfo.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>MAInfo.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>BE569F5A-BC3A-4630-A611-81997A39176C</key>
+		<string>..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/talastairb/MAInfo.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>BE569F5A-BC3A-4630-A611-81997A39176C</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>BE569F5A-BC3A-4630-A611-81997A39176C</string>
+			<key>IDESourceControlWCCName</key>
+			<string>MAInfo</string>
+		</dict>
+	</array>
+</dict>
+</plist>
