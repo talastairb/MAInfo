@@ -11,6 +11,7 @@
 		462EBAEAEBFB40B8A66561F4 /* libPods-MAInfoMaster.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F3F8288F05C1413598FECC5F /* libPods-MAInfoMaster.a */; };
 		6C03BD8E18FE2CDA00DE573A /* splash screen hi res.png in Resources */ = {isa = PBXBuildFile; fileRef = 6C03BD8C18FE2CDA00DE573A /* splash screen hi res.png */; };
 		6CED1CEC1900077400E5CF79 /* splash screen lo res.png in Resources */ = {isa = PBXBuildFile; fileRef = 6CED1CEB1900077400E5CF79 /* splash screen lo res.png */; };
+		6CED1CEF190057A100E5CF79 /* TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CED1CEE190057A100E5CF79 /* TableViewController.m */; };
 		D336F01A18FC4BAF00C1A0A3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D336F01918FC4BAF00C1A0A3 /* Foundation.framework */; };
 		D336F01C18FC4BAF00C1A0A3 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D336F01B18FC4BAF00C1A0A3 /* CoreGraphics.framework */; };
 		D336F01E18FC4BAF00C1A0A3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D336F01D18FC4BAF00C1A0A3 /* UIKit.framework */; };
@@ -56,6 +57,8 @@
 		43537F4D18FDEB1B00D4F69E /* SecondViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
 		6C03BD8C18FE2CDA00DE573A /* splash screen hi res.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "splash screen hi res.png"; sourceTree = "<group>"; };
 		6CED1CEB1900077400E5CF79 /* splash screen lo res.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "splash screen lo res.png"; sourceTree = "<group>"; };
+		6CED1CED190057A100E5CF79 /* TableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewController.h; sourceTree = "<group>"; };
+		6CED1CEE190057A100E5CF79 /* TableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewController.m; sourceTree = "<group>"; };
 		D336F01618FC4BAF00C1A0A3 /* MAInfoMaster.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MAInfoMaster.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D336F01918FC4BAF00C1A0A3 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		D336F01B18FC4BAF00C1A0A3 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -166,6 +169,8 @@
 				D336F02918FC4BAF00C1A0A3 /* AppDelegate.m */,
 				D336F02B18FC4BAF00C1A0A3 /* Main.storyboard */,
 				D336F02E18FC4BAF00C1A0A3 /* ViewController.h */,
+				6CED1CED190057A100E5CF79 /* TableViewController.h */,
+				6CED1CEE190057A100E5CF79 /* TableViewController.m */,
 				D336F02F18FC4BAF00C1A0A3 /* ViewController.m */,
 				D336F03118FC4BB000C1A0A3 /* Images.xcassets */,
 				D336F02018FC4BAF00C1A0A3 /* Supporting Files */,
@@ -370,6 +375,7 @@
 				43537F4E18FDEB1B00D4F69E /* SecondViewController.m in Sources */,
 				D336F03018FC4BAF00C1A0A3 /* ViewController.m in Sources */,
 				D336F02A18FC4BAF00C1A0A3 /* AppDelegate.m in Sources */,
+				6CED1CEF190057A100E5CF79 /* TableViewController.m in Sources */,
 				D336F02618FC4BAF00C1A0A3 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
