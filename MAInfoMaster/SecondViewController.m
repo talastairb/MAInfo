@@ -100,8 +100,12 @@
         
         
     }
-    else{
-        message.text=@"login failed";
+    if(success==2){
+        message.text=@"Invalid Password";
+    }
+    if(success==0)
+    {
+        message.text=@"invalid email";
     }
 }
 
