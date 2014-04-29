@@ -84,10 +84,10 @@
                                     <segue destination="tkF-HY-58L" kind="push" id="XYz-oy-qmS"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G9U-D5-NtB">
-                                <rect key="frame" x="201" y="286" width="79" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G9U-D5-NtB">
+                                <rect key="frame" x="172" y="235" width="128" height="110"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Scores app">
+                                <state key="normal" title="Scores app" image="mustangs.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -95,13 +95,24 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="po6-mq-8jB">
-                                <rect key="frame" x="25" y="292" width="110" height="30"/>
+                                <rect key="frame" x="25" y="292" width="107" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Locker Combos">
+                                <state key="normal" title="Mailbox combo">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <segue destination="j47-Gr-FQF" kind="push" id="bfh-N7-8h1"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qfd-Ce-pdK">
+                                <rect key="frame" x="189" y="321" width="100" height="25"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                <state key="normal" title="Athletics Scores">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="dQ4-bc-gNS" kind="push" id="loJ-s0-feN"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -165,7 +176,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tkr-We-Ckc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="480" y="-857"/>
+            <point key="canvasLocation" x="18" y="-526"/>
         </scene>
         <!--Table View Controller-->
         <scene sceneID="Lg0-1a-bfe">
@@ -346,6 +357,7 @@
     <resources>
         <image name="flikicon.png" width="363" height="363"/>
         <image name="gear.png" width="92" height="92"/>
+        <image name="mustangs.png" width="380" height="338"/>
         <image name="saaiconnew.png" width="363" height="363"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
@@ -353,4 +365,7 @@
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
+    <inferredMetricsTieBreakers>
+        <segue reference="loJ-s0-feN"/>
+    </inferredMetricsTieBreakers>
 </document>
