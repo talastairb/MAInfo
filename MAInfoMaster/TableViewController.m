@@ -6,14 +6,72 @@
 //  Copyright 2014 Sparrow-Labs. All rights reserved.
 //
 
-#import "SAATableViewController.h"
+#import "TableViewController.h"
 #import <SLExpandableTableView.h>
-#import "ActivityDetails.h"
-#import "ActivityDetailViewController.h"
+
+@interface SLExpandableTableViewControllerHeaderCell : UITableViewCell <UIExpandingTableViewCell>
+
+@property (nonatomic, assign, getter = isLoading) BOOL loading;
+
+@property (nonatomic, readonly) UIExpansionStyle expansionStyle;
+- (void)setExpansionStyle:(UIExpansionStyle)expansionStyle animated:(BOOL)animated;
+
+@end
+
+@implementation SLExpandableTableViewControllerHeaderCell
+
+- (NSString *)accessibilityLabel
+{
+    return self.textLabel.text;
+}
+
+- (void)setLoading:(BOOL)loading
+{
+    if (loading != _loading) {
+        _loading = loading;
+        [self _updateDetailTextLabel];
+    }
+}
+
+- (void)setExpansionStyle:(UIExpansionStyle)expansionStyle animated:(BOOL)animated
+{
+    if (expansionStyle != _expansionStyle) {
+        _expansionStyle = expansionStyle;
+        [self _updateDetailTextLabel];
+    }
+}
+
+- (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
+{
+    if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
+        [self _updateDetailTextLabel];
+        self.backgroundColor = [UIColor yellowColor];
+        self.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+        self.textLabel.frame = CGRectMake(10, 20, 100,22);
+    }
+    return self;
+}
+
+- (void)_updateDetailTextLabel
+{
+    if (self.isLoading) {
+        self.detailTextLabel.text = @"Loading data";
+    } else {
+        switch (self.expansionStyle) {
+            case UIExpansionStyleExpanded:
+                // self.detailTextLabel.text = @" ";
+                break;
+            case UIExpansionStyleCollapsed:
+                // self.detailTextLabel.text = @">";
+                break;
+        }
+    }
+}
+
+@end
 
 
-
-@interface SAATableViewController () <UITableViewDataSource, UITableViewDelegate>
+@interface TableViewController () <SLExpandableTableViewDatasource, SLExpandableTableViewDelegate>
 
 @property (nonatomic, strong) NSArray *firstSectionStrings;
 @property (nonatomic, strong) NSArray *secondSectionStrings;
@@ -24,12 +82,10 @@
 
 @end
 
-@implementation SAATableViewController {
+@implementation TableViewController {
     NSMutableArray *eventNames;
     NSMutableArray *eventDetails;
     NSMutableArray *eventTimes;
-    NSMutableArray *events;
-    int selectedRow;
 }
 
 #pragma mark - setters and getters
@@ -42,7 +98,6 @@
     eventNames = [[NSMutableArray alloc] init];
     eventDetails =[[NSMutableArray alloc] init];
     eventTimes =[[NSMutableArray alloc] init];
-    events = [[NSMutableArray alloc] init];
     
     // URL of the activities
     NSURL * url = [[NSURL alloc] initWithString:@"http://www.saa.ma1geek.org/getActivities.php?date=2014-03-21"];
@@ -72,20 +127,19 @@
     NSLog(@"%@", jsonDic);
     
     for(NSDictionary *activities in activityDic){
-        NSString *eventNameString = [NSString stringWithFormat:@"%@",
-                                    [activities objectForKey:@"eventName"]];
-        NSString *description = [NSString stringWithFormat:@"%@",
-                                [activities objectForKey:@"eventDescription"]];
-        NSString *loc = [NSString stringWithFormat:@"%@",
-                        [activities objectForKey:@"eventLocation"]];
-        NSString *time = [NSString stringWithFormat:@"%@ - %@", [activities objectForKey:@"startTime"], [activities objectForKey:@"endTime"]];
-        [events addObject:[[ActivityDetails alloc] initWithName:[NSString stringWithString:eventNameString]
-                                                           date:[NSString stringWithString:time]
-                                                           desc:[NSString stringWithString:description]
-                                                       location:[NSString stringWithString:loc]]];
+        NSString *eventNameString = [NSString stringWithFormat:@"%@", [activities objectForKey:@"eventName"]];
+            //NSLog(@"EventName: %@", eventNameString);
+        [eventNames addObject:eventNameString];
         
+        NSString *description = [NSString stringWithFormat:@"%@", [activities objectForKey:@"eventDescription"]];
+        [eventDetails addObject:description];
+            NSLog(@"Description: %@", description);
+        
+        NSString *time = [NSString stringWithFormat:@"%@", [activities objectForKey:@"startTime"]];
+        [eventTimes addObject:time];
+        NSLog(@"Time: %@", time);
     }
-    NSLog(@"Event array: %@", events);
+    NSLog(@"Event array: %@", eventNames);
 
     if (self = [super initWithStyle:style]) {
         NSLog(@"number of events:%i",[eventNames count]);
@@ -108,14 +162,13 @@
 - (void)loadView
 {
     NSLog(@"%@", @"TVC loadView");
-    UITableView *tableView = [[UITableView alloc] initWithFrame:[UIScreen mainScreen].bounds style:UITableViewStylePlain];
+    SLExpandableTableView *tableView = [[SLExpandableTableView alloc] initWithFrame:[UIScreen mainScreen].bounds style:UITableViewStylePlain];
     [self initWithStyle:UITableViewStylePlain];
     tableView.dataSource = self;
     tableView.delegate = self;
     tableView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     self.view = tableView;
 }
-
 
 #pragma mark - SLExpandableTableViewDatasource
 
@@ -129,17 +182,16 @@
     return ![self.expandableSections containsIndex:section];
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    NSLog(@"Loading cell");
+- (UITableViewCell<UIExpandingTableViewCell> *)tableView:(SLExpandableTableView *)tableView expandingCellForSection:(NSInteger)section
+{
     static NSString *CellIdentifier = @"TableViewControllerHeaderCell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    SLExpandableTableViewControllerHeaderCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    
     if (!cell) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
+        cell = [[SLExpandableTableViewControllerHeaderCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
     }
-    ActivityDetails *ad = [events objectAtIndex:[indexPath indexAtPosition:0]];
-    NSString *fieldLabel = ad.activityName;
-    cell.textLabel.text = fieldLabel;
-    NSLog(@"Loading cell with %@",fieldLabel);
+    
+    cell.textLabel.text = [eventNames objectAtIndex:section];
     return cell;
 }
 
@@ -166,16 +218,16 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return events.count;
+    return eventNames.count;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     //return eventNames.count;
-    return 1;
+    return 2;
 }
 
-/*- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"Cell";
     
@@ -188,36 +240,14 @@
     cell.textLabel.text = eventDetails[indexPath.section];
 
     return cell;
-}*/
-#pragma mark - Segue Controls
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Make sure your segue name in storyboard is the same as this line
-    if ([[segue identifier] isEqualToString:@"detailSegue"])
-    {
-        // Get reference to the destination view controller
-        ActivityDetailViewController *vc = [segue destinationViewController];
-        NSLog(@"%i", selectedRow);
-        // Pass any objects to the view controller here, like...
-        [vc setDetails:[events objectAtIndex:selectedRow]];
-    }
-}
-
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    //self.someProperty = [eventNames objectAtIndex:indexPath.row];
-    NSLog(@"Selected row %i",[indexPath indexAtPosition:0]);
-    selectedRow = [indexPath indexAtPosition:0];
-    [self performSegueWithIdentifier:@"detailSegue" sender:self];
-    
 }
 
 #pragma mark - UITableViewDelegate
 
-/*- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [tableView deselectRowAtIndexPath:indexPath animated:NO];
-}*/
+}
 
 #pragma mark - Private category implementation ()
 

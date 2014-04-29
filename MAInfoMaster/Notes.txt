@@ -1,9 +1,4 @@
 for logging in
-
-username/password:test/test
-
-or
-
 username:
 test_email_hash
 password:
