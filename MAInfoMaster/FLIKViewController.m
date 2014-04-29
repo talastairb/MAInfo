@@ -25,9 +25,10 @@
 @synthesize lunchSides;
 @synthesize lunchSoups;
 
-const int numberOfSections = 2;
+const int numberOfSections = 3;
 const int entreeSection = 0;
 const int sideSection = 1;
+const int flikLiveSection = 2;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -82,9 +83,14 @@ const int sideSection = 1;
             
             break;
             
+        case flikLiveSection:
+            
+            return [lunchFlikLive count];
+        
+            break;
         default:
             
-            return 0;
+            return 3;
             
     }
     
@@ -99,7 +105,9 @@ const int sideSection = 1;
         case sideSection:
             
             return @"Sides";
-            
+            break;
+        case flikLiveSection:
+            return @"Flik Live";
             break;
         default:
             return 0;
@@ -121,8 +129,10 @@ const int sideSection = 1;
         case sideSection:
             cell.textLabel.text = [lunchSides objectAtIndex:indexPath.row];
             break;
+        case flikLiveSection:
+            cell.textLabel.text = [lunchFlikLive objectAtIndex:indexPath.row];
         default:
-            cell.textLabel.text = @"Not Found";
+            cell.textLabel.text = @"None Entered";
             
     }
     return cell;
@@ -145,22 +155,22 @@ const int sideSection = 1;
     urlData = [NSURLConnection sendSynchronousRequest:urlRequest
                                     returningResponse:&response
                                                 error:&error];
-    NSLog(@"%@", urlData);
+    //NSLog(@"%@", urlData);
     
     NSDictionary *jsonDic = [NSJSONSerialization
                              JSONObjectWithData:urlData
                              options:0
                              error:&error];
     
-    NSLog(@"%@", jsonDic);
+    //NSLog(@"%@", jsonDic);
     NSDictionary *entreeDic = [jsonDic objectForKey:@"Entree"];
     
-    NSLog(@"Entree length is: %x", (unsigned int)[entreeDic count]);
-    NSLog(@"Description: %@", [entreeDic description]);
+   // NSLog(@"Entree length is: %x", (unsigned int)[entreeDic count]);
+   // NSLog(@"Description: %@", [entreeDic description]);
     
     for(NSDictionary *subMeals in entreeDic){
         NSString *holdString = [NSString stringWithFormat:@"%@", [subMeals objectForKey:@"mealName"]];
-        NSLog(@"MealName: %@", holdString);
+        //NSLog(@"MealName: %@", holdString);
         [lunchEntrees addObject:holdString];
     }
     NSLog(@"lunchEntrees: %@", lunchEntrees);
@@ -184,22 +194,22 @@ const int sideSection = 1;
     urlData = [NSURLConnection sendSynchronousRequest:urlRequest
                                     returningResponse:&response
                                                 error:&error];
-    NSLog(@"%@", urlData);
+    //NSLog(@"%@", urlData);
     
     NSDictionary *jsonDic = [NSJSONSerialization
                              JSONObjectWithData:urlData
                              options:0
                              error:&error];
     
-    NSLog(@"%@", jsonDic);
+   /// NSLog(@"%@", jsonDic);
     NSDictionary *sidesDic = [jsonDic objectForKey:@"Side"];
     
-    NSLog(@"Sides length is: %x", (unsigned int)[sidesDic count]);
-    NSLog(@"Description: %@", [sidesDic description]);
+   // NSLog(@"Sides length is: %x", (unsigned int)[sidesDic count]);
+    //NSLog(@"Description: %@", [sidesDic description]);
     
     for(NSDictionary *subMeals in sidesDic){
         NSString *holdString = [NSString stringWithFormat:@"%@", [subMeals objectForKey:@"mealName"]];
-        NSLog(@"MealName: %@", holdString);
+        //NSLog(@"MealName: %@", holdString);
         [lunchSides addObject:holdString];
     }
     NSLog(@"lunchSides: %@", lunchSides);
@@ -224,22 +234,22 @@ const int sideSection = 1;
     urlData = [NSURLConnection sendSynchronousRequest:urlRequest
                                     returningResponse:&response
                                                 error:&error];
-    NSLog(@"%@", urlData);
+   // NSLog(@"%@", urlData);
     
     NSDictionary *jsonDic = [NSJSONSerialization
                              JSONObjectWithData:urlData
                              options:0
                              error:&error];
     
-    NSLog(@"%@", jsonDic);
-    NSDictionary *flikLiveDic = [jsonDic objectForKey:@"Side"];
+   // NSLog(@"%@", jsonDic);
+    NSDictionary *flikLiveDic = [jsonDic objectForKey:@"Flik Live"];
     
-    NSLog(@"Sides length is: %x", (unsigned int)[flikLiveDic count]);
-    NSLog(@"Description: %@", [flikLiveDic description]);
+    //NSLog(@"Sides length is: %x", (unsigned int)[flikLiveDic count]);
+    //NSLog(@"Description: %@", [flikLiveDic description]);
     
     for(NSDictionary *subMeals in flikLiveDic){
         NSString *holdString = [NSString stringWithFormat:@"%@", [subMeals objectForKey:@"mealName"]];
-        NSLog(@"MealName: %@", holdString);
+        //NSLog(@"MealName: %@", holdString);
         [lunchFlikLive addObject:holdString];
     }
     NSLog(@"lunchFlikLive: %@", lunchFlikLive);
