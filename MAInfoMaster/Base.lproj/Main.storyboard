@@ -238,7 +238,7 @@
         <!--Table View Controller-->
         <scene sceneID="Lg0-1a-bfe">
             <objects>
-                <viewController id="yBr-aa-TaE" customClass="TableViewController" sceneMemberID="viewController">
+                <viewController id="yBr-aa-TaE" customClass="SAATableViewController" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="M1i-lb-mhT"/>
                     <connections>
                         <segue destination="PND-a9-sTh" kind="modal" identifier="detailSegue" id="gvb-9L-mrb"/>

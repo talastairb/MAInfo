@@ -6,7 +6,7 @@
 //  Copyright 2014 Sparrow-Labs. All rights reserved.
 //
 
-#import "TableViewController.h"
+#import "SAATableViewController.h"
 #import <SLExpandableTableView.h>
 
 @interface SAATableViewController()
@@ -44,35 +44,20 @@
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
     if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
-        [self _updateDetailTextLabel];
+        /*[self _updateDetailTextLabel];
         self.backgroundColor = [UIColor yellowColor];
         self.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-        self.textLabel.frame = CGRectMake(10, 20, 100,22);
+        self.textLabel.frame = CGRectMake(10, 20, 100,22);*/
     }
     return self;
 }
 
-- (void)_updateDetailTextLabel
-{
-    if (self.isLoading) {
-        self.detailTextLabel.text = @"Loading data";
-    } else {
-        switch (self.expansionStyle) {
-            case UIExpansionStyleExpanded:
-                // self.detailTextLabel.text = @" ";
-                break;
-            case UIExpansionStyleCollapsed:
-                // self.detailTextLabel.text = @">";
-                break;
-        }
-    }
-}
 
 
 @end
 
 
-@interface TableViewController () <SLExpandableTableViewDatasource, SLExpandableTableViewDelegate>
+@interface SAATableViewController () <UITableViewDatasource, SLExpandableTableViewDelegate>
 
 @property (nonatomic, strong) NSArray *firstSectionStrings;
 @property (nonatomic, strong) NSArray *secondSectionStrings;
@@ -83,7 +68,7 @@
 
 @end
 
-@implementation TableViewController {
+@implementation SAATableViewController {
     NSMutableArray *eventNames;
     NSMutableArray *eventDetails;
     NSMutableArray *eventTimes;
