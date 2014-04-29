@@ -103,12 +103,13 @@ const int flikLiveSection = 2;
             break;
             
         case sideSection:
-            
             return @"Sides";
             break;
+            
         case flikLiveSection:
             return @"Flik Live";
             break;
+        
         default:
             return 0;
             
@@ -131,8 +132,6 @@ const int flikLiveSection = 2;
             break;
         case flikLiveSection:
             cell.textLabel.text = [lunchFlikLive objectAtIndex:indexPath.row];
-        default:
-            cell.textLabel.text = @"None Entered";
             
     }
     return cell;
