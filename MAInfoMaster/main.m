@@ -2,7 +2,7 @@
 //  main.m
 //  MAInfoMaster
 //
-//  Created by Alastair on 4/14/14.
+//  Created by Alastair on 4/14/14.q
 //  Copyright (c) 2014 Alastair. All rights reserved.
 //
 
