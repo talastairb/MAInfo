@@ -94,16 +94,6 @@
                                     <segue destination="dQ4-bc-gNS" kind="push" id="fdG-Jo-rF7"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="po6-mq-8jB">
-                                <rect key="frame" x="25" y="292" width="107" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Mailbox combo">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="j47-Gr-FQF" kind="push" id="bfh-N7-8h1"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qfd-Ce-pdK">
                                 <rect key="frame" x="189" y="321" width="100" height="25"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -113,6 +103,18 @@
                                 </state>
                                 <connections>
                                     <segue destination="dQ4-bc-gNS" kind="push" id="loJ-s0-feN"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Th-51-Foi">
+                                <rect key="frame" x="20" y="228" width="132" height="111"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <state key="normal" title="Mailbox Combo" backgroundImage="Mail.jpeg">
+                                    <color key="titleColor" red="1" green="0.0" blue="0.011788656142404541" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" red="0.97021857788300703" green="1" blue="0.98050166668345928" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="j47-Gr-FQF" kind="push" id="MFb-pU-BV9"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -136,8 +138,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Locker Combos" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cha-0Z-Qgy">
-                                <rect key="frame" x="120" y="244" width="123" height="21"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Mailbox Combo app goes here" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cha-0Z-Qgy">
+                                <rect key="frame" x="72" y="241" width="237" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="highlightedColor"/>
@@ -149,7 +151,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qVE-Y6-MVD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-73" y="943"/>
+            <point key="canvasLocation" x="0.0" y="839"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="Wzu-Fe-D0T">
@@ -355,6 +357,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Mail.jpeg" width="241" height="209"/>
         <image name="flikicon.png" width="363" height="363"/>
         <image name="gear.png" width="92" height="92"/>
         <image name="mustangs.png" width="380" height="338"/>
