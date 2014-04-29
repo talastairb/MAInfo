@@ -9,7 +9,7 @@
 #import "TableViewController.h"
 #import <SLExpandableTableView.h>
 
-@interface SLExpandableTableViewControllerHeaderCell : UITableViewCell <UIExpandingTableViewCell>
+@interface SAATableViewController()
 
 @property (nonatomic, assign, getter = isLoading) BOOL loading;
 
@@ -18,12 +18,12 @@
 
 @end
 
-@implementation SLExpandableTableViewControllerHeaderCell
+@implementation SAATableViewController
 
-- (NSString *)accessibilityLabel
+/*- (NSString *)accessibilityLabel
 {
     return self.textLabel.text;
-}
+}*/
 
 - (void)setLoading:(BOOL)loading
 {
@@ -67,6 +67,7 @@
         }
     }
 }
+
 
 @end
 
@@ -169,6 +170,13 @@
     tableView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     self.view = tableView;
 }
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    //self.someProperty = [eventNames objectAtIndex:indexPath.row];
+    NSLog(@"Selected row %i",indexPath.row);
+    [self performSegueWithIdentifier:@"detailSegue" sender:self];
+    
+}
 
 #pragma mark - SLExpandableTableViewDatasource
 
@@ -244,10 +252,10 @@
 
 #pragma mark - UITableViewDelegate
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+/*- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [tableView deselectRowAtIndexPath:indexPath animated:NO];
-}
+}*/
 
 #pragma mark - Private category implementation ()
 
