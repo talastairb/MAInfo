@@ -7,18 +7,29 @@
 //
 
 #import "ActivityDetailViewController.h"
+#import "ActivityDetails.h"
 
 @interface ActivityDetailViewController ()
 
 @end
 
 @implementation ActivityDetailViewController
+@synthesize details;
+@synthesize activityNameLabel;
+@synthesize timeLocationLabel;
+@synthesize descriptionLabel;
+- (IBAction)backButtonPressed:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+- (IBAction)swipeLeftRegistered:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        [_descriptionLabel sizeToFit];
+        [descriptionLabel sizeToFit];
     }
     return self;
 }
@@ -26,6 +37,11 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [activityNameLabel setText:[details activityName]];
+    NSString *dateLoc = [NSString stringWithFormat:@"%@, %@",[details activityLocation], [details activityDate]];
+    [timeLocationLabel setText:dateLoc];
+    [descriptionLabel setText:[details activityDescription]];
+    [timeLocationLabel sizeToFit];
 	// Do any additional setup after loading the view.
 }
 
@@ -35,4 +51,6 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)backButton:(id)sender {
+}
 @end

@@ -11,6 +11,7 @@
 		462EBAEAEBFB40B8A66561F4 /* libPods-MAInfoMaster.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F3F8288F05C1413598FECC5F /* libPods-MAInfoMaster.a */; };
 		6C03BD8E18FE2CDA00DE573A /* splash screen hi res.png in Resources */ = {isa = PBXBuildFile; fileRef = 6C03BD8C18FE2CDA00DE573A /* splash screen hi res.png */; };
 		6CA8F929190FD8A7003621C4 /* ActivityDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CA8F928190FD8A7003621C4 /* ActivityDetailViewController.m */; };
+		6CE5AA12191013EB006D0059 /* ActivityDetails.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CE5AA11191013EB006D0059 /* ActivityDetails.m */; };
 		6CED1CEC1900077400E5CF79 /* splash screen lo res.png in Resources */ = {isa = PBXBuildFile; fileRef = 6CED1CEB1900077400E5CF79 /* splash screen lo res.png */; };
 		6CED1CEF190057A100E5CF79 /* SAATableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CED1CEE190057A100E5CF79 /* SAATableViewController.m */; };
 		D336F01A18FC4BAF00C1A0A3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D336F01918FC4BAF00C1A0A3 /* Foundation.framework */; };
@@ -59,6 +60,8 @@
 		6C03BD8C18FE2CDA00DE573A /* splash screen hi res.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "splash screen hi res.png"; sourceTree = "<group>"; };
 		6CA8F927190FD8A7003621C4 /* ActivityDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivityDetailViewController.h; sourceTree = "<group>"; };
 		6CA8F928190FD8A7003621C4 /* ActivityDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivityDetailViewController.m; sourceTree = "<group>"; };
+		6CE5AA10191013EB006D0059 /* ActivityDetails.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivityDetails.h; sourceTree = "<group>"; };
+		6CE5AA11191013EB006D0059 /* ActivityDetails.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivityDetails.m; sourceTree = "<group>"; };
 		6CED1CEB1900077400E5CF79 /* splash screen lo res.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "splash screen lo res.png"; sourceTree = "<group>"; };
 		6CED1CED190057A100E5CF79 /* SAATableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SAATableViewController.h; sourceTree = "<group>"; };
 		6CED1CEE190057A100E5CF79 /* SAATableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SAATableViewController.m; sourceTree = "<group>"; };
@@ -176,6 +179,8 @@
 				D336F02E18FC4BAF00C1A0A3 /* ViewController.h */,
 				6CED1CED190057A100E5CF79 /* SAATableViewController.h */,
 				6CED1CEE190057A100E5CF79 /* SAATableViewController.m */,
+				6CE5AA10191013EB006D0059 /* ActivityDetails.h */,
+				6CE5AA11191013EB006D0059 /* ActivityDetails.m */,
 				D336F02F18FC4BAF00C1A0A3 /* ViewController.m */,
 				D336F03118FC4BB000C1A0A3 /* Images.xcassets */,
 				D336F02018FC4BAF00C1A0A3 /* Supporting Files */,
@@ -378,6 +383,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6CA8F929190FD8A7003621C4 /* ActivityDetailViewController.m in Sources */,
+				6CE5AA12191013EB006D0059 /* ActivityDetails.m in Sources */,
 				43537F4E18FDEB1B00D4F69E /* SecondViewController.m in Sources */,
 				D336F03018FC4BAF00C1A0A3 /* ViewController.m in Sources */,
 				D336F02A18FC4BAF00C1A0A3 /* AppDelegate.m in Sources */,

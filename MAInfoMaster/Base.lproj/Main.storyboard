@@ -268,29 +268,51 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Time/Location label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EAL-B0-PBU">
-                                <rect key="frame" x="20" y="120" width="151" height="21"/>
+                                <rect key="frame" x="20" y="120" width="280" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Look! words! do they automatically wrap when the message is too long?" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="Bbx-5C-fBM">
-                                <rect key="frame" x="20" y="149" width="280" height="215"/>
+                                <rect key="frame" x="20" y="149" width="280" height="220"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f3i-ft-qXR">
+                                <rect key="frame" x="20" y="31" width="93" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Return to List">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="backButton:" destination="PND-a9-sTh" eventType="touchUpInside" id="SrG-nS-WDk"/>
+                                    <action selector="backButtonPressed:" destination="PND-a9-sTh" eventType="touchUpInside" id="YFn-1i-fxT"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="9HO-P9-fcB" appends="YES" id="wtl-Fe-84L"/>
+                        </connections>
                     </view>
                     <connections>
+                        <outlet property="BackButton" destination="f3i-ft-qXR" id="RKb-Qb-Ftq"/>
+                        <outlet property="Swiper" destination="9HO-P9-fcB" id="8FC-PA-cme"/>
                         <outlet property="activityNameLabel" destination="3S6-yc-CoG" id="VcG-3g-ddF"/>
                         <outlet property="descriptionLabel" destination="Bbx-5C-fBM" id="tTa-WB-RJJ"/>
                         <outlet property="timeLocationLabel" destination="EAL-B0-PBU" id="Uyc-dd-QlF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uc7-re-6DC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="down" id="9HO-P9-fcB">
+                    <connections>
+                        <action selector="swipeLeftRegistered:" destination="PND-a9-sTh" id="MH2-gx-S7F"/>
+                    </connections>
+                </swipeGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="876" y="-188"/>
         </scene>

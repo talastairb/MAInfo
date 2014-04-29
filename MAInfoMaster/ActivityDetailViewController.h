@@ -7,10 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ActivityDetails.h"
 
 @interface ActivityDetailViewController : UIViewController
 @property (strong, nonatomic) IBOutlet UILabel *activityNameLabel;
 @property (strong, nonatomic) IBOutlet UILabel *timeLocationLabel;
 @property (strong, nonatomic) IBOutlet UILabel *descriptionLabel;
+@property (strong, nonatomic) IBOutlet UIButton *BackButton;
+@property (strong, nonatomic) IBOutlet UISwipeGestureRecognizer *Swiper;
+@property ActivityDetails *details;
 
 @end
