@@ -114,10 +114,9 @@
     urlData = [NSURLConnection sendSynchronousRequest:urlRequest
                                     returningResponse:&response
                                                 error:&error];
-    NSDictionary *jsonDic = [NSJSONSerialization
-                             JSONObjectWithData:urlData
-                             options:0
-                             error:&error];
+    NSDictionary *jsonDic = [NSJSONSerialization JSONObjectWithData:urlData
+                                                            options:0
+                                                              error:&error];
     
     NSDictionary *activityDic = [jsonDic objectForKey:@"Activities"];
     
@@ -134,7 +133,7 @@
         
         NSString *description = [NSString stringWithFormat:@"%@", [activities objectForKey:@"eventDescription"]];
         [eventDetails addObject:description];
-            //NSLog(@"Description: %@", description);
+            NSLog(@"Description: %@", description);
         
         NSString *time = [NSString stringWithFormat:@"%@", [activities objectForKey:@"startTime"]];
         [eventTimes addObject:time];
@@ -224,7 +223,8 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return eventNames.count;
+    //return eventNames.count;
+    return 2;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
