@@ -1,0 +1,19 @@
+PODS:
+  - Expecta (0.3.0)
+  - KIF (2.0.0)
+  - OCMock (2.2.4)
+  - SLExpandableTableView (1.1.1)
+
+DEPENDENCIES:
+  - Expecta (>= 0.2.2)
+  - KIF (~> 2.0)
+  - OCMock (>= 2.2)
+  - SLExpandableTableView
+
+SPEC CHECKSUMS:
+  Expecta: 322f1dc42610106a5ba9871b4924cf1635d80833
+  KIF: c01fb8fb593cf8ffeeb69ed8d402ce88143e0697
+  OCMock: 5008fae4b4789b8fc3e48cd7660f2eb5ef8ce89e
+  SLExpandableTableView: 6e0b28001c9f0023b7434295fc879fd48d0e5dfc
+
+COCOAPODS: 0.32.1
